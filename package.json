@@ -1,0 +1,22 @@
+{
+  "name": "sails-hook-mongo-multi-tenant",
+  "version": "0.0.1",
+  "description": "one back, one database per tenant",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdelatif EL MAKNATI",
+  "license": "ISC",
+  "sails": {
+    "isHook": true,
+    "hookName": "mongo-multitenant"
+  },
+  "dependencies": {
+    "cls-hooked": "^4.2.2",
+    "mongodb": "^6.1.0"
+  },
+  "devDependencies": {
+    "sails": "^1.5.8"
+  }
+}
