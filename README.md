@@ -1,4 +1,4 @@
-![Alt text](image.png)
+![logo](image.png)
 # Sails.js Multi-Tenant Hook for MongoDB
 This is a Sails.js hook that provides multi-tenant functionality to your application. It allows you to serve multiple tenants (organizations, clients, etc.) from a single instance of your application.
 
@@ -8,7 +8,7 @@ To install the hook, run the following command:
 
 ```js
 
-npm install sails-hook-mongo-multitenant
+npm install sails-hook-mongo-multi-tenant
 
 ```
 
