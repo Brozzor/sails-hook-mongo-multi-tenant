@@ -15,8 +15,6 @@ module.exports = function multitenancyHook(sails) {
 
       sails.on('hook:orm:loaded', async function () {
 
-        sails.log.info("Transactional mode" , sails.config.transactions.enabled ? "ENABLED".green : "DISABLED".red);
-
         sails.tenant_db_con = {default: Tenant.getDatastore().manager}
 
         Object.defineProperty(sails.config, 'tenant', {
