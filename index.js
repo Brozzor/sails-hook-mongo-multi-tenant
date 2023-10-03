@@ -3,18 +3,17 @@ const MongoOperation = require("./MongoOperation");
 const {getNamespace} = require("cls-hooked");
 
 module.exports = function multitenancyHook(sails) {
-
   return {
     initialize: function (cb) {
-      if (!fs.existsSync("../api/models")) return cb();
-      let modelsFiles = fs.readdirSync("../api/models").filter((file) => {
+      if (!fs.existsSync("./api/models")) return cb();
+      let modelsFiles = fs.readdirSync("./api/models").filter((file) => {
         return file.split('.').pop() === "js"
       }).map((file) => {
         return file.slice(0, -3)
       });
 
       sails.on('hook:orm:loaded', async function () {
-
+        
         sails.tenant_db_con = {default: Tenant.getDatastore().manager}
 
         Object.defineProperty(sails.config, 'tenant', {
@@ -26,7 +25,7 @@ module.exports = function multitenancyHook(sails) {
 
 
         for (let file of modelsFiles) {
-          const modelDefinition = require("../api/models/" + file);
+          const modelDefinition = require("../../api/models/" + file);
           const modelName = file.toLowerCase();
           global[file].create = (data) => {
             return new MongoOperation.CreateOperation((a, r) => {a()}, modelDefinition , modelName , data)}
