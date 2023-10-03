@@ -1,6 +1,6 @@
 {
   "name": "sails-hook-mongo-multi-tenant",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "one back, one database per tenant",
   "main": "index.js",
   "scripts": {
