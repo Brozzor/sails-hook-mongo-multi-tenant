@@ -323,6 +323,10 @@ class UpdateOneOperation extends MongoOperation{
     return this;
   }
 
+  fetch(){
+    return this;
+  }
+
   then(onfulfilled, onrejected) {
     return new Promise((a , r) => {
       let ns = getNamespace('request-session');
