@@ -424,6 +424,7 @@ function conditionConverter(cond , modelDefinition) {
               val = new ObjectId(val)
             }
             value[MONGO_OPERAND[op]] = val;
+            delete value[op];
           }
         } else if ((isModelId || key === '_id' && typeof value == 'string') && ObjectId.isValid(value)) {
            value = new ObjectId(value)
